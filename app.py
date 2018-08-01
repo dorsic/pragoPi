@@ -61,7 +61,7 @@ class Pragotron(object):
 
     def incTime(self):                
         intTime = self.strToIntTime(self.lastImpulseStatus['displayedTime'])
-        if intTime:
+        if not intTime is None:
             intTime = intTime + 1
             intTime = intTime + 100-60 if intTime % 100 > 59 else intTime
             intTime = intTime - 1200 if intTime > 1159 else intTime
@@ -175,5 +175,5 @@ def cleanup():
 atexit.register(cleanup)
 
 if __name__ == "__main__":
-    clock = Pragotron('/home/pi/PragoPi/clockStatus.conf')
-    app.run(host='0.0.0.0', port=3335, debug=False)
+    clock = Pragotron('/home/pi/pragoPi/clockStatus.conf')
+    app.run(host='0.0.0.0', port=80, debug=False)

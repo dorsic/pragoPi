@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/pi/PragoPi/app.py > /home/pi/PragoPi/pragopi.log 2>&1
+ExecStart=/usr/bin/python3 /home/pi/pragoPi/app.py > /home/pi/pragoPi/pragopi.log 2>&1
 Restart=on-abort
 
 [Install]
