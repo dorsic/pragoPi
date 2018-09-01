@@ -7,14 +7,14 @@ Pragotron slave watch is moved by a magnetic coil feed by alternating impulses. 
 To simulate the master clock a Raspberry Pi Zero W is used with time sychronized by ntpd. A cron like scheduler issues an impulse on the beginning of each minute on pin 23 or 24. This impulse drives L393 motor driver module and connects the upscaled voltage to the clock.
 
 ## Used Parts
-Pragotron slave watch
-Raspberry Pi Zero W
-L393 driver
-DC-DC voltage upscaler
+- Pragotron slave watch
+- Raspberry Pi Zero W
+- L393 driver
+- DC-DC voltage upscaler
 
-Raspberry Pi power adapter
-Raspberry Pi power cable
-8GB Class 10 microSDHC card
+- Raspberry Pi power adapter
+- Raspberry Pi power cable
+- 8GB Class 10 microSDHC card
 
 ## Raspberry Pi Preparation
 Flash the OS with etcher. In my case the Raspbian Strech Lite from 06-27-2018 was used.
@@ -86,8 +86,10 @@ sudo python3 app.py
 ```
 
 Issue a http get request from another computer or console
-`curl -XGET http://pragopi:80/impulse`
-`curl -XGET http://pragopi:80/setTime/2132`
+```
+curl -XGET http://pragopi:80/impulse
+curl -XGET http://pragopi:80/setTime/2132
+```
 
 
 ##### Install System Service
@@ -99,6 +101,13 @@ sudo systemctl daemon-reload
 sudo systemctl enable pragopi.service
 sudo systemctl start pragopi.service
 ```
+
+### API
+Move clock one minute forward
+`curl -XGET http://pragopi:80/impulse`
+Set time
+`curl -XGET http://pragopi:80/setTime/<displayedTime>`
+where *displayedTime* is the current time showed by the clock in HHMM format. Both 12 and 24 hour times are supported.
 
 ## Wiring
 Wire PIN 23 a 24 to motor driver
