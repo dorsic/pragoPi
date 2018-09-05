@@ -27,7 +27,7 @@ I prefer to use the Raspberry Pi Zero W because of its small factor, WiFi and pr
 ![Used Parts](https://raw.githubusercontent.com/dorsic/pragoPi/master/images/IMG_1535.jpg)
 
 ## Raspberry Pi Preparation
-*(This is a brief description, for detailed instructions follow [Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up). If you have no keyboard and monitor like me, search for RPi headless installation.)*
+*(A brief description, for detailed instructions follow [Setting up your Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up). If you have no keyboard and monitor like me, search for RPi headless installation.)*
 
 Flash the operating system to SD card with Etcher. In my case I used the Raspbian Stretch Lite from 06-27-2018.
 For headless setup without monitor and keyboard copy an empty file named `ssh` to the \boot partition of the SD card and `wpasupplicant.config` file with you WiFi configuration to allow your Raspberry Pi to connect to your network and log in via ssh.
@@ -42,7 +42,7 @@ Log in to you Rasbperry Pi via ssh. The default Raspbian password for *pi* user 
 ```ssh pi@<RPI IP address>```
 
 ### Prepare the Raspberry Pi Operating System
-*(This is a condensed version of [Finishing the setup](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/6).)*
+*(Condensed version of [Finishing the setup](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/6).)*
 
 Once logged in to you RPi I recommend to do some basic setup with `raspi-config`.
 Issue 
@@ -57,7 +57,7 @@ sudo apt-get dist-upgrade
 ```
 
 ##### Install NTPD
-*(This is an optional but highly recommended step.)*
+*(An optional but highly recommended step.)*
 
 Using Network Time Protocol (NTP) is an easy way how to keep time on your RPi accurate. NTP servers are connected to GNSS or other accurate time sources (even primary time and frequency standards) and broadcast the time information to clients. NTP daemon witch runs in your RPi listens to this messages, computes the network delay, jitter and the corrections of frequency of the RPi oscillator to provide more accurate time information.
 
