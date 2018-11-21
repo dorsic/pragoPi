@@ -185,4 +185,15 @@ sudo systemctl start pragopi.service
 `curl -XGET http://pragoPi:80/setTime/<displayedTime>`
 where *displayedTime* is the current time showed by the clock in HHMM format. Both 12- and 24- hour time formats are supported.
 
+## Further extensions
+
+The clockc is a 24/7 device so it is worth to pay attention to power consumption. You can apply some of the power saving techniques as:
+- throttle down the cpu
+- turn off unnecessary components and chips (e.g. usb and bluetooth)
+
+Furthermore you can experiment with your own time source. You can extend the system with an RTC module or hook in a local PPS source derived from power line frequency to better overcome internet outages. Note that powerline frequency is quite a good time source and is managed to be alligned with UTC. You can check current status e.g. on [swiss grid](https://www.swissgrid.ch/en/home/operation/grid-data/current-data.html). 
+But nowadays is wifi so common as the electricity and playing with 220V power lines requires knowledge and paying extra attention.
+
+
+
 *If you think the project documentation needs enhancement in some chapters I would be happy to do so.*
